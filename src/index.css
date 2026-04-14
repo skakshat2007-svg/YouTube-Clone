@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 5000px;
+    height: 200vh;
+}
+#youtube-icon {
+    width: 35px;
+    height: 35px;
+}
+nav {
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    padding: 10px 20px;
+    justify-content: space-between;
+    /* border: 2px solid black; */
+    position: sticky;
+    top: 0;
+    margin-bottom: 10px;
+
+}
+nav>div {
+    display: flex;
+    align-items: center;
+    height: 85%;
+    /* border: 2px solid black; */
+}
+.logo{
+    display: flex;
+    align-items: center;
+    height: 85%;
+    text-decoration: none;
+    color: black;
+}
+#search-container{
+    width: 50%;
+    position: relative;
+    max-width: 600px;
+    min-width: 100px;
+}
+#search-container>input{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    border-radius: 50px;
+    border: 1px solid rgba(128, 128, 128, 0.638);
+    font-size: 1rem;
+}
+#search-container>span{
+    position: absolute;
+    right: 2px;
+    height: 95%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: rgb(248,249,249);
+    border: none;
+    border-left: 1px solid hsla(0, 0%, 50%, 0.638);
+    /* border: 1px solid grey; */
+    width: 8%;
+}
+
+.utility-icons {
+    height: 20px;
+    width: 20px;
+}
+#search-box:focus{
+    outline: none;
+}
+#user-profile{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+nav>div:nth-of-type(3){
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 15vw;
+}
+button{
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+/* button:hover{
+    background-color: ;
+} */
+#theme-button{
+    height: 80%;
+    width: 40%;
+}
+#Homepage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Homepage>#sidebar{
+    width: 15vw;
+    padding: 10px;
+}
+section#home{
+    flex: 2;
+}
+#Homepage>*{
+    border: 1px solid black;
+}
+#sidebar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
+
+
+.dark{
+    background-color: black;
+}
+.dark *{
+    color: white;
+}
+.dark input::placeholder{
+    color: grey;
+}
+.dark input{
+    background-color: black;
+    border-color: rgb(49,48,49);
+}
+.dark #search-container>span{
+    background-color: rgb(34,35,35);
+    border-color: rgb(49,48,49);
+}
+.dark button{
+    background-color: rgb(39,39,39);
+}
+.dark button:hover{
+    background-color: rgb(75, 75, 75);
+}
