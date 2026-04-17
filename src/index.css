@@ -18,7 +18,8 @@ nav {
     position: sticky;
     top: 0;
     margin-bottom: 10px;
-
+    background-color: white;
+    z-index: 1;
 }
 nav>div {
     display: flex;
@@ -84,10 +85,11 @@ button{
     cursor: pointer;
     border-radius: 20px;
     transition: 0.3s;
+    background-color: rgb(240,240,241);
 }
-/* button:hover{
-    background-color: ;
-} */
+button:hover{
+    background-color: rgb(202, 202, 203);
+}
 #theme-button{
     height: 80%;
     width: 40%;
@@ -95,25 +97,96 @@ button{
 #Homepage{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
+/* #Homepage>*{
+    border: 1px solid black;
+} */
 #Homepage>#sidebar{
     width: 15vw;
     padding: 10px;
+    position: sticky;
+    /* border: 2px solid red; */
+    left: 0;
+    top: 10vh;
+    align-self: flex-start;
 }
 section#home{
     flex: 2;
-}
-#Homepage>*{
-    border: 1px solid black;
 }
 #sidebar ul{
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
-
-
+#sidebar ul>li{
+    margin-bottom: 10px;
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.2s;
+    font-size: 1.1rem;
+    font-weight: 550;
+}
+#sidebar ul>li:hover{
+    background-color: rgb(243,242,243);
+}
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* align-items: center; */
+}
+.video-redirector{
+    text-decoration: none;
+    color: black;
+}
+.video-container{
+    max-width: 350px;
+    max-height: auto;
+    margin-bottom: 15px;
+    /* border: 2px solid orange; */
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: start; */
+    transition: 0.4s;
+}
+.video-container p{
+    text-wrap: wrap;
+}
+.video-container:hover{
+    background-color: rgba(202, 202, 203, 0.455);
+}
+.thumbnail{
+    border-radius: 10px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.card-video-details{
+    padding: 5px;
+    display: flex;
+    /* border: 2px solid red; */
+}
+.card-video-details>div{
+    /* border: 2px solid yellow; */
+    padding: 10px;
+}
+.card-video-details>p{
+    margin-top: -10px;
+}
+.card-video-details>div>img{
+    height: 5vh;
+    width: 5vh;
+    border-radius: 50%;
+}
+.card-video-details>div>*{
+    margin: 0;
+    margin-bottom: 10px;
+}
 
 
 
@@ -124,6 +197,9 @@ section#home{
 }
 .dark *{
     color: white;
+}
+.dark nav{
+    background-color: black;
 }
 .dark input::placeholder{
     color: grey;
@@ -141,4 +217,7 @@ section#home{
 }
 .dark button:hover{
     background-color: rgb(75, 75, 75);
+}
+.dark .video-container:hover{
+    background-color: rgba(75, 75, 75, 0.404);
 }
