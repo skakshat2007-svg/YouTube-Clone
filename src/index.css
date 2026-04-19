@@ -99,10 +99,7 @@ button:hover{
     justify-content: center;
     align-items: flex-start;
 }
-/* #Homepage>*{
-    border: 1px solid black;
-} */
-#Homepage>#sidebar{
+#sidebar{
     width: 15vw;
     padding: 10px;
     position: sticky;
