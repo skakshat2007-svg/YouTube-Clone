@@ -17,6 +17,7 @@ export default function VideoPage() {
   const { videoId } = useParams();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     async function fetchVideoData() {
       setLoading(true);
       try {
