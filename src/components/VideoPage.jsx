@@ -10,35 +10,36 @@ export default function VideoPage(){
     const [channelImage,setChannelImage] = useState('')
     const [subs,setSubs] = useState(0)
     const { videoId } = useParams()
-    useEffect(()=>{async function f() {
-        let res=await fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoId}&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
-        let data=await res.json()
-        let channelId=data.items[0].snippet.channelId
-        const channelUrl = `https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${channelId}&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`
-        const channelRes = await fetch(channelUrl)
-        const channelData = await channelRes.json()
-        console.log(channelData)  
-        setLikes(data.items[0].statistics.likeCount)
-        setViews(data.items[0].statistics.viewCount)
-        setDescription(data.items[0].snippet.description)
-        setChannelName(channelData.items[0].snippet.title)
-        setChannelImage(channelData.items[0].snippet.thumbnails.default.url)
-        setSubs(channelData.items[0].statistics.subscriberCount)
-    }
-    f()
+    useEffect(()=>{
+        async function fetching() {
+            let res=await fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoId}&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`)
+            let data=await res.json()
+            let channelId=data.items[0].snippet.channelId
+            const channelUrl = `https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${channelId}&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`
+            const channelRes = await fetch(channelUrl)
+            const channelData = await channelRes.json()
+            console.log(channelData)  
+            setLikes(data.items[0].statistics.likeCount)
+            setViews(data.items[0].statistics.viewCount)
+            setDescription(data.items[0].snippet.description)
+            setChannelName(channelData.items[0].snippet.title)
+            setChannelImage(channelData.items[0].snippet.thumbnails.default.url)
+            setSubs(channelData.items[0].statistics.subscriberCount)
+        }
+    fetching()
     },[])
     return (
         <div className="video-page-container">
             <div className="player-wrapper">
                 <iframe
                     width="70%" 
-                    height="500"
+                    height="580"
                     aspect-ratio='16/9'
                     src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
                     title="YouTube video player"
                     frameBorder="0"
                     // add autoplay turned off for testing purpoes
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                 ></iframe>
             </div>
